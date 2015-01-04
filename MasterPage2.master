@@ -15,7 +15,7 @@
     <div>
         <header>
             <div class="wrapper">
-                <a href="index.aspx"><img id="logo" src="" alt="JustPhoto" /></a>
+                <a href="index.aspx">Just Photo</a>
                 <span id="accOpt">
                     <asp:Image ID="headPicture" runat="server" />
                     <asp:HyperLink ID="account" runat="server">account</asp:HyperLink>
@@ -44,7 +44,7 @@
         </div>
         <footer>
             <div class="wrapper">
-                <p>Copyright</p>
+                <p>Copyright &copy; </p>
             </div>
         </footer>
     </div>
