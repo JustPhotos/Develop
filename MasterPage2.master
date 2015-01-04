@@ -20,7 +20,7 @@
                     <asp:Image ID="headPicture" runat="server" />
                     <asp:HyperLink ID="account" runat="server">account</asp:HyperLink>
                     <asp:HyperLink ID="logout" runat="server">Logout</asp:HyperLink>
-                </span>  
+                </span> 
             </div>
         </header>
         <div class="personalBar">
@@ -31,8 +31,10 @@
             </div>
             <div class="whiteBar">
                 <div class="wrapper">
-                    <asp:Label ID="name" runat="server" Text="name"></asp:Label>
-            <asp:Image ID="headPic" runat="server" />
+                    <div class="personBlock">
+                        <asp:Label ID="name" runat="server" Text="name"></asp:Label>
+                        <asp:Image ID="headPic" runat="server" />
+                    </div>
                 </div>
             </div>
         <div id="content" class="wrapper">
