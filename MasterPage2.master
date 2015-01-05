@@ -15,7 +15,7 @@
     <div>
         <header>
             <div class="wrapper">
-                <a href="index.aspx" class="logo">Just Photo</a>
+                <a href="Default.aspx" class="logo">Just Photo</a>
                 <span id="accOpt">
                     <asp:Image ID="headPicture" runat="server" />
                     <asp:HyperLink ID="account" runat="server">account</asp:HyperLink>
