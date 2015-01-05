@@ -19,6 +19,24 @@ body {
     padding: 5px 0px;
     box-sizing:border-box;
 }
+input[type='file'] {
+    width:190px;
+}
+input[type='reset'], input[type='submit'] {
+     width:40%;
+     background:#bbb;
+     border:none;
+     line-height: 40px;
+     font-size: 20px;
+     color: #333;
+     margin:5px 10px;
+     font-family:Arial ,'微軟正黑體';
+}
+input[type='reset']:hover, input[type='submit']:hover {
+    background:#2cb72a;
+    color:#fff;
+}
+
 /*header setting*/
 header {
     width:100%;
@@ -213,7 +231,7 @@ footer p {
     line-height:30px;
     padding:0px 7px;
 }
-input[type="submit"] {
+#loginBlock input[type="submit"] {
     width:100%;
     background:#bbb;
     border:none;
@@ -221,12 +239,30 @@ input[type="submit"] {
    font-size: 20px;
    color: #333;
 }
-input[type="submit"]:hover {
+#loginBlock input[type="submit"]:hover {
     background:#2cb72a;
     color:#fff;
 }
-
-#signupBlock {
-    padding: 100px 0px;
-    margin: 0 auto;
+#uploadBlock {
+    font-family:Arial,'微軟正黑體';
+    width:275px;
+    margin:13% auto;
+    font-family:Arial;
+    padding:10px 15px 30px 15px;
+    background:#fff;
+}
+#uploadBlock th {
+    width:100%;
+    text-align:center;
+    font-size:1.5em;
+    color:#333;
+    height:50px;
+    border-bottom:1px solid #eee;
+}
+#uploadBlock tr {
+    height: 50px;
+    width:auto;
+}
+#uploadBlock td {
+    width:100%;
 }
