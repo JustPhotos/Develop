@@ -19,7 +19,8 @@
                 <span id="accOpt">
                     <asp:Image ID="headPicture" runat="server" />
                     <asp:HyperLink ID="account" runat="server">account</asp:HyperLink>
-                    <asp:HyperLink ID="logout" runat="server">Logout</asp:HyperLink>
+                    <a id="uploadBtn" href="upload.aspx">上傳</a>
+                    <asp:HyperLink ID="logout" runat="server">登出</asp:HyperLink>
                 </span>  
             </div>
         </header>

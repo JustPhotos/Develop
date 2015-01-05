@@ -235,9 +235,10 @@ footer p {
     width:100%;
     background:#bbb;
     border:none;
-   line-height: 40px;
-   font-size: 20px;
-   color: #333;
+    line-height: 40px;
+    font-size: 20px;
+    color: #333;
+    margin:0;
 }
 #loginBlock input[type="submit"]:hover {
     background:#2cb72a;
@@ -265,4 +266,10 @@ footer p {
 }
 #uploadBlock td {
     width:100%;
+}
+#uploadBtn {
+    display: inline-block;
+    font-size:0.9em;
+    position:relative;
+    top:-18px;
 }
