@@ -23,9 +23,8 @@
                 </span>  
             </div>
         </header>
-        <div id="content" class="wrapper">
+        <div id="content">
             <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-
             </asp:ContentPlaceHolder>
         </div>
         <footer>

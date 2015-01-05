@@ -180,24 +180,30 @@ footer p {
     text-align:center;
 }
 /*login signup page setting*/
-.accountBlock {
+#loginBlock {
     width:260px;
-    height:210px;
-    margin:0 auto;
+    height:300px;
+    margin:7% auto;
     font-family:Arial;
-    /*border:1px solid #777;*/
-    padding:30px 15px;
-    background:#fff/*fafafa*/;
+    padding:10px 15px 30px 15px;
+    background:#fff;
 }
-.accountBlock tr {
+#loginBlock tr td{
+    height:70px;
+    vertical-align:bottom;
+}
+#loginBlock th {
+    font-size:1.5em;
+    color:#333;
     height:50px;
+    border-bottom:1px solid #eee;
 }
-.accountBlock input {
+#loginBlock input {
     width:160px;
     line-height:30px;
     padding:0px 7px;
 }
-.accountBlock input[type="submit"] {
+#loginBlock input[type="submit"] {
     width:100%;
     background:#bbb;
     border:none;
@@ -205,16 +211,7 @@ footer p {
    font-size: 20px;
    color: #333;
 }
-.accountBlock input[type="submit"]:hover {
+#loginBlock input[type="submit"]:hover {
     background:#2cb72a;
     color:#fff;
 }
-
-/*
-@media screen and (max-width:1000px) {
-    .wrapper {
-        padding:3%;
-    }
-    .accountBlock {width:100%; height:auto;margin:0px;
-    }
-}*/
