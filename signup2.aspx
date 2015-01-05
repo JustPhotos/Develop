@@ -1,12 +1,17 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="signup.aspx.vb" Inherits="signup" %>
+﻿<%@ Page Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="signup2.aspx.vb" Inherits="_signup" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    <title>Sing Up</title>
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-     <div id="signupBlock">
-        <asp:Label ID="LabelAccount" runat="server" Text="帳號""></asp:Label>
-        <asp:TextBox ID="TextBoxAccount" runat="server" placeholder="數字與英文，至少六碼" MaxLength="15"></asp:TextBox>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>註冊帳號</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:Label ID="LabelAccount" runat="server" Text="帳號" style="top: 29px; left: 20px; position: absolute; height: 16px; width: 32px"></asp:Label>
+        <asp:TextBox ID="TextBoxAccount" runat="server" placeholder="數字與英文，至少六碼" MaxLength="15" style="top: 30px; left: 129px; position: absolute; height: 19px; width: 180px"></asp:TextBox>
         <asp:CustomValidator ID="accountValidator" runat="server" ErrorMessage="至少輸入六碼" Font-Bold="True" Font-Size="X-Small" ForeColor="Red" style="top: 60px; left: 129px; position: absolute; height: 13px; width: 188px" ControlToValidate="TextBoxAccount" EnableClientScript="False"></asp:CustomValidator>
         <asp:RequiredFieldValidator ID="accountRequired" runat="server" ErrorMessage="請輸入帳號" ControlToValidate="TextBoxAccount" Font-Bold="True" Font-Size="X-Small" ForeColor="Red" style="top: 60px; left: 129px; position: absolute; height: 13px; width: 188px" EnableClientScript="False"></asp:RequiredFieldValidator>
         <br />
@@ -61,5 +66,6 @@
         <br />
         <br />
     </div>
-</asp:Content>
-
+    </form>
+</body>
+</html>

@@ -111,7 +111,7 @@ footer p {
     font-weight:normal;
     position:absolute;
     overflow:hidden;
-    top:100px;
+    bottom:240px;
 }
 .personalBar .personBlock {
     height: 120px;
@@ -213,7 +213,7 @@ footer p {
     line-height:30px;
     padding:0px 7px;
 }
-#loginBlock input[type="submit"] {
+input[type="submit"] {
     width:100%;
     background:#bbb;
     border:none;
@@ -221,7 +221,12 @@ footer p {
    font-size: 20px;
    color: #333;
 }
-#loginBlock input[type="submit"]:hover {
+input[type="submit"]:hover {
     background:#2cb72a;
     color:#fff;
+}
+
+#signupBlock {
+    padding: 100px 0px;
+    margin: 0 auto;
 }

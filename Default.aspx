@@ -12,4 +12,3 @@
         <asp:Label ID="photoName" runat="server" Text="photoName"></asp:Label>
     </div>
 </asp:Content>
-
