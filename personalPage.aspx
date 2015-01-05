@@ -9,6 +9,6 @@
         <asp:Image ID="user" runat="server" />
         <asp:Label ID="userName" runat="server" Text="userName"></asp:Label>
         <asp:Label ID="photoName" runat="server" Text="photoName"></asp:Label>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
     </div>
 </asp:Content>
-

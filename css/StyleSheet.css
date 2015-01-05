@@ -14,6 +14,7 @@ body {
 }
 .wrapper {
     width:90%;
+    height:auto;
     margin: 0 auto;
     padding: 5px 0px;
     box-sizing:border-box;
@@ -22,7 +23,7 @@ body {
 header {
     width:100%;
     background-color: #2cb72a;
-    height: 50px;
+    height:50px;
     position:relative;
     box-shadow:0px 1px 15px #333;
 }
@@ -31,27 +32,36 @@ header a {
     font-weight:bold;
     line-height:50px;
 }
- header a:hover {
-     color:#333;
- }
- header .logo {
-     float: left;
-     background:url('./img/JustPhoto_logo.png') no-repeat;
-     display:inline-block;
-     width:160px;
-     text-indent: -9999px;
- }
+header a:hover {
+    color:#333;
+}
+header .logo {
+    float: left;
+    background:url('../img/JustPhoto_logo.png') no-repeat left 50%;
+    -moz-background-size:100%;
+    -webkit-background-size:100%;
+    -o-background-size:100%;
+    background-size:100%;        
+    display:inline-block;
+    width:15%;
+    max-width:160px;
+    min-width:65px;
+    height:auto;
+    text-indent: -9999px;
+}
 header .logo:hover {
-    background:url('./img/JustPhoto_logo_o.png') no-repeat;
+    background:url('../img/JustPhoto_logo_o.png') no-repeat left 50%;
+    -moz-background-size:100%;
+    -webkit-background-size:100%;
+    -o-background-size:100%;
+    background-size:100%;        
 }
 header #accOpt { /*靠右*/
     text-align: right;
     position:relative;
     float: right;
-    top: 0px;
-    width: 215px;
-    margin-right: 10px;
-    left: 0px;
+    width: 70%;
+    margin-right: 5%;
 }
 header #headPicture {
     width: 35px;
@@ -60,13 +70,15 @@ header #headPicture {
     -moz-border-radius: 35px;
     border-radius: 35px;
     border: none;
-    margin: 2px 10px;
+    margin: 7px 5px;
 }
 header #account,header #logout{
     margin: 0 5px;
-    top:-13px;
+    top:-18px;
     position:relative;
+    font-size:0.9em;
 }
+/*personal page setting*/
 .personalBar {
     width: 100%;
     height: 160px;
@@ -74,20 +86,21 @@ header #account,header #logout{
 .personalBar #description {
     color: #fff;
     font-family: Arial , '微軟正黑體';
-    position:relative;
-    top:65px;
-    font-size:20px;
+    font-size:1em;
     font-weight:normal;
+    position:absolute;
+    bottom:210px;
+    overflow:hidden;
 }
 .personalBar .personBlock {
     height: 120px;
-    width: 400px;
+    width: 100%;
     text-align: right;
     right: 5%;
     position: absolute;
     top: 85px;
+    z-index:5;
 }
-
 .personalBar #headPic {
     width: 120px;
     height: 120px;
@@ -106,7 +119,7 @@ header #account,header #logout{
     top:-15px;
     position:relative;
     text-align:right;
-    margin-right:10px;
+    margin-right:1%;
 }
 .personalBar .grayBar {
     width: 100%;
@@ -196,3 +209,12 @@ footer p {
     background:#2cb72a;
     color:#fff;
 }
+
+/*
+@media screen and (max-width:1000px) {
+    .wrapper {
+        padding:3%;
+    }
+    .accountBlock {width:100%; height:auto;margin:0px;
+    }
+}*/
