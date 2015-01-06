@@ -16,7 +16,6 @@ body {
     width:90%;
     height:auto;
     margin: 0 auto;
-    padding: 5px 0px;
     box-sizing:border-box;
 }
 input[type='file'] {
@@ -94,11 +93,9 @@ header #headPicture {
     margin: 7px 10px;
     /*padding: 7px 10px;*/
 }
-header #account,header #logout{
-    margin: 0 5px;
-    top:-18px;
+header #jpt_masterPageUpload, #jpt_masterPageSignup, #jpt_masterPageLogin {
     position:relative;
-    font-size:0.9em;
+    top:-16px;
 }
  /*footer setting*/
 footer {
