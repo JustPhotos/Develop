@@ -20,7 +20,7 @@
                     <asp:Image ID="headPicture" runat="server" ImageUrl="~/img/guest.png" />
                     <asp:HyperLink ID="masterPageUpload" runat="server" Visible="False">上傳</asp:HyperLink>
                     <asp:HyperLink ID="masterPageSignup" runat="server">註冊</asp:HyperLink>
-                    <asp:HyperLink ID="masterPageLogin" runat="server" Visible="False">登入</asp:HyperLink>
+                    <asp:HyperLink ID="masterPageLogin" runat="server">登入</asp:HyperLink>
                 </span>  
             </div>
         </header>
