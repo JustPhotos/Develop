@@ -76,6 +76,7 @@ header .logo:hover {
     -o-background-size:100%;
     background-size:100%;        
 }
+
 header #accOpt { /*靠右*/
     text-align: right;
     position:relative;
@@ -90,7 +91,8 @@ header #headPicture {
     -moz-border-radius: 35px;
     border-radius: 35px;
     border: none;
-    margin: 7px 5px;
+    margin: 7px 10px;
+    /*padding: 7px 10px;*/
 }
 header #account,header #logout{
     margin: 0 5px;
@@ -308,10 +310,10 @@ footer p {
 .btn:hover {
     background:#70DF6F;
 }
-#signupBtn {
+#jpt_defaultPageSignup {
     position:relative;
 }
-#loginBtn {
+#jpt_defaultPageLogin {
     position:relative;
 }
 

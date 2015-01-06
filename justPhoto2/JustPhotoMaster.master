@@ -17,10 +17,10 @@
             <div class="wrapper">
                 <a href="Default.aspx" class="logo">JustPhoto</a>
                 <span id="accOpt">
-                    <asp:Image ID="headPicture" runat="server" ImageUrl="~/img/guest.png" />
-                    <asp:HyperLink ID="masterPageUpload" runat="server" Visible="False">上傳</asp:HyperLink>
-                    <asp:HyperLink ID="masterPageSignup" runat="server">註冊</asp:HyperLink>
-                    <asp:HyperLink ID="masterPageLogin" runat="server">登入</asp:HyperLink>
+                    <asp:Image ID="headPicture" runat="server" ImageUrl="~/img/guest.png" Height="35px" Width="35px" />
+                    <asp:HyperLink ID="jpt_masterPageUpload" runat="server" Visible="False">上傳</asp:HyperLink>
+                    <asp:HyperLink ID="jpt_masterPageSignup" runat="server" NavigateUrl="~/Signup.aspx">註冊</asp:HyperLink>
+                    <asp:HyperLink ID="jpt_masterPageLogin" runat="server" NavigateUrl="~/Login.aspx">登入</asp:HyperLink>
                 </span>  
             </div>
         </header>

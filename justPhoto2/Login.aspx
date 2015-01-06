@@ -36,7 +36,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2"><asp:Button ID="login" runat="server" Text="登入" /></td>
+                <td colspan="2"><asp:Button ID="BtnLogin" runat="server" Text="登入" /></td>
             </tr>
         </table>
     </div>

@@ -6,8 +6,8 @@
     <div id="ad">
         <p id="slogan">回歸最原始的照片分享！</p>
         <div class="btnBlock">
-            <a id="signupBtn" class="btn" href="signup.aspx">註冊</a>
-            <a id="loginBtn"class="btn" href="login.aspx">登入</a>
+            <asp:HyperLink ID="jpt_defaultPageSignup"  runat="server" NavigateUrl="~/Signup.aspx" CssClass="btn">註冊</asp:HyperLink>
+            <asp:HyperLink ID="jpt_defaultPageLogin" runat="server" NavigateUrl="~/Login.aspx" CssClass="btn">登入</asp:HyperLink>
         </div>
     </div>
 </asp:Content>
