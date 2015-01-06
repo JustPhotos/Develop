@@ -7,15 +7,15 @@
         <table>
             <tr><th colspan="2">Login</th></tr>
             <tr>
-                <td class="auto-style1">E-mail</td>
-                <td class="auto-style1"><asp:TextBox ID="email_l" type="email" runat="server"></asp:TextBox></td>
+                <td class="auto-style1">信箱&nbsp;&nbsp;</td>
+                <td class="auto-style1"><asp:TextBox ID="email_l" type="email" placeholder="信箱" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
-                <td>Password</td>
-                <td><asp:TextBox ID="pw" type="password" maxlength="30" runat="server" ValidateRequestMode="Inherit"></asp:TextBox></td>
+                <td>密碼&nbsp;&nbsp;</td>
+                <td><asp:TextBox ID="pw" type="password" maxlength="30" placeholder="密碼" runat="server" ValidateRequestMode="Inherit"></asp:TextBox></td>
             </tr>
             <tr>
-                <td colspan="2"><asp:Button ID="login" runat="server" Text="Login" /></td>
+                <td colspan="2"><asp:Button ID="login" runat="server" Text="登入" /></td>
             </tr>
         </table>
     </div>

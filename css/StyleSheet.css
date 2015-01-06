@@ -209,16 +209,15 @@ footer p {
 }
 /*login signup page setting*/
 #loginBlock {
-    width:260px;
-    height:300px;
-    margin:7% auto;
+    width:250px;
+    height:280px;
+    margin:13% auto;
     font-family:Arial;
     padding:10px 15px 30px 15px;
     background:#fff;
 }
 #loginBlock tr td{
     height:70px;
-    vertical-align:bottom;
 }
 #loginBlock th {
     font-size:1.5em;
@@ -272,4 +271,43 @@ footer p {
     font-size:0.9em;
     position:relative;
     top:-18px;
+}
+/*Default page ad block*/
+#ad {
+    width:100%;
+    height:50%;
+    margin:7% auto;
+    position:absolute;
+}
+#slogan {
+    margin:10% auto;
+    text-align:center;
+    font-size:1.1em;
+}
+.btnBlock {
+    width:30%;
+    min-width:300px;
+    height:auto;
+    margin:-6% auto;
+}
+.btn {
+    display:inline-block;
+    margin:3% 5%;
+    background:#2cb72a;
+    line-height:50px;
+    text-align:center;
+    font-size:1em;
+    color:#fff;
+    float:left;
+    height:20%;
+    width:40%;
+}
+.btn:hover {
+    background:#70DF6F;
+}
+#signupBtn {
+    position:relative;
+}
+#loginBtn {
+    position:relative;
 }

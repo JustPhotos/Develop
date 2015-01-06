@@ -32,10 +32,10 @@ Partial Class _Default
                     Dim _photoId As String = myDreader("ID")
                     Dim _user As Integer = myDreader("user")
 
-                    photo.ImageUrl = _photoId
-                    user.ImageUrl = Nothing 'undo==================
-                    userName.Text = _user
-                    photoName.Text = _photoname
+                    'photo.ImageUrl = _photoId
+                    'user.ImageUrl = Nothing 'undo==================
+                    'userName.Text = _user
+                    'photoName.Text = _photoname
                 End If
             Catch ex As Exception
                 '--Error Handling
