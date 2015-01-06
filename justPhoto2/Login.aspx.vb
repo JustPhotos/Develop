@@ -2,11 +2,11 @@
 Partial Class Login
     Inherits System.Web.UI.Page
     Protected Sub BtnLogin_Click(sender As Object, e As EventArgs) Handles BtnLogin.Click
-        Dim loginAccountStr As String = email_l.Text
-        Dim loginPassword As String = pw.Text
+        Dim loginAccountStr As String = LoginPageAccount.Text
+        Dim loginPassword As String = LoginPagePassword.Text
 
-        Dim checkLoginAll As Boolean = LoginAccountNull.IsValid And LoginAccountCheck.IsValid And LoginPasswordNull.IsValid And LoginPasswordCheck.IsValid
-        If Not checkLoginAll Then
+        'Dim checkLoginAll As Boolean = LoginAccountEmpty.IsValid And LoginPasswordEmpty.IsValid
+        If Not (LoginAccountEmpty.IsValid And LoginPasswordEmpty.IsValid) Then
             Exit Sub
         End If
 
@@ -30,38 +30,39 @@ Partial Class Login
                 jptDataReader = jptCommand.ExecuteReader
 
                 Dim FoundAccount As Boolean = False
+
                 While jptDataReader.Read()
                     Dim getID As String = jptDataReader(0).ToString()
                     Dim getAccount As String = jptDataReader(1)
                     Dim getEmail As String = jptDataReader(2).ToString()
                     Dim getPassword As String = jptDataReader(3)
 
+                    'if find account or email
                     If (getAccount = loginAccountStr) Or (getEmail = loginAccountStr) Then
-                        If getPassword = loginPassword Then
-                            FoundAccount = True
+                        'if the password is correct
+                        If (getPassword = loginPassword) Then
+                            FoundAccount = True     'represent find account, if not then the account is not registed
+
                             'Response.Write("<Script language='JavaScript'>alert('登入成功');</Script>")
 
                             ' process login success 
                             Session("jpt_id") = getID
                             Session("jpt_memberAcc") = getAccount
                             Session("isLoginState") = "OK"
-                            'Response.Write("~\personalPage")
+                            Response.Redirect("~/Personal.aspx")
                             ' login success end
                             Exit While
                         End If
-                        LoginPasswordCheck.IsValid = False
-                        pw.Text = ""
-                        FoundAccount = True
                     End If
                 End While
 
+                ' if not find account then represent the account is not regiseted
                 If Not FoundAccount Then
-                    LoginAccountCheck.ErrorMessage = "未註冊之帳號，請重新輸入"
-                    LoginAccountCheck.IsValid = False
-                    pw.Text = ""
+                    LoginAccountNotFound.IsValid = False
+                    LoginPagePassword.Text = ""
                 End If
             Catch ex As Exception
-                Response.Write("<Script language='JavaScript'>alert('" & ex.Message & "999');</Script>")
+                Response.Write("<Script language='JavaScript'>alert('" & ex.Message & "');</Script>")
             Finally
                 If Not (jptDataReader Is Nothing) Then
                     jptCommand.Cancel()
@@ -74,7 +75,7 @@ Partial Class Login
                 End If
             End Try
         Catch ex As Exception
-            Response.Write("<Script language='JavaScript'>alert('" & ex.Message & "888');</Script>")
+            Response.Write("<Script language='JavaScript'>alert('" & ex.Message & "');</Script>")
         End Try
     End Sub
 End Class
