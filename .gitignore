@@ -1,4 +1,11 @@
 # Ignore everything in this directory
 *
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+# Mac crap
+.DS_Store
+
 # Except this file
 !.gitignore
