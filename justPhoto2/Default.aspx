@@ -19,7 +19,7 @@
     <div id="ad">
         <div id="ad_contents">
             <%--<span>回歸最原始的照片分享</span>--%>
-            <div id="slogan">回到最原始的照片分享</div>
+            <span id="slogan">回到最原始的照片分享</span>
             <div id="ad_btnpanel">
                 <asp:HyperLink ID="jpt_defaultPageSignup"  runat="server" NavigateUrl="~/Signup.aspx" CssClass="btn btnLogin">註冊</asp:HyperLink>
                 <br /><br />

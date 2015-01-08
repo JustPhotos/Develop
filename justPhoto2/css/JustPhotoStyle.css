@@ -306,26 +306,25 @@ footer p {
 }
 #ad_contents {
     width: 50%;
-    height: 50%;
+    height: auto;
     margin:10% auto;
     background-color:rgba(0, 0, 0, 0.6);
     border-radius: 50px;
     text-align:center;
+    padding: 2% 1%;
 }
 #slogan {
-    margin:0px auto;
     text-align:center;
     color: #fff;
     font-size:50pt;
     font-family: 微軟正黑體, Arial;
     font-weight:bold;
-    padding-top: 40px;
+    padding: 2% 0px 5% 0px;
+    display:inline-block;
 }
 #ad_btnpanel {
     width: 35%;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top: 15%;
+    margin:2% auto;
 }
 .btnBlock {
     text-align:center;
