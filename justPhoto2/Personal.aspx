@@ -13,8 +13,8 @@
             <div class="wrapper">
                 <div class="personBlock">
                     <asp:Label ID="name" runat="server" Text="name"></asp:Label>
-                    <img  ID="headPic" src="" />
-                    <!--<asp:Image ID="headPic" runat="server" />-->
+                    <!--<img  ID="headPic" src="" />-->
+                    <asp:Image ID="headPic" runat="server" />
                 </div>
             </div>
         </div>
@@ -25,7 +25,6 @@
         <asp:Image ID="user" runat="server" />
         <asp:Label ID="userName" runat="server" Text="userName"></asp:Label>
         <asp:Label ID="photoName" runat="server" Text="photoName"></asp:Label>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
     </div>
 </asp:Content>
 
