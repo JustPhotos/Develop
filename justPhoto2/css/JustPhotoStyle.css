@@ -106,6 +106,14 @@ header #jpt_masterPageSignup, #jpt_masterPageLogin, #jpt_masterPageAccount, #jpt
     margin-left: 10px;
     top:-16px;
 }
+header #jpt_masterPageLogout {
+    width:auto;
+    font-weight:bold;
+    line-height:50px;
+    font-size:1em;
+    padding:0;
+    
+}
  /*footer setting*/
 footer {
     width:100%;
