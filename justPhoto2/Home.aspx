@@ -6,7 +6,7 @@
     <div id="ad">
         <div id="ad_contents">
             <%--<span>回歸最原始的照片分享</span>--%>
-            <div id="slogan">Home Page</div>
+            <span id="slogan">Home Page</span>
         </div>
     </div>
 </asp:Content>
