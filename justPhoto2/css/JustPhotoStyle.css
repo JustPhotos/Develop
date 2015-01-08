@@ -54,14 +54,6 @@ header a {
 header a:hover {
     color:#333;
 }
-header input[type="submit"] {
-    background:none;
-    color:#fff;
-}
-header input[type="submit"]:hover {
-    background:none;
-    color:#333;
-}
 header .logo {
     float: left;
     background:url('../img/JustPhoto_logo.png') no-repeat left 50%;
@@ -101,18 +93,23 @@ header #headPicture {
     margin: 7px 10px;
     /*padding: 7px 10px;*/
 }
-header #jpt_masterPageSignup, #jpt_masterPageLogin, #jpt_masterPageAccount, #jpt_masterPageUpload, #jpt_masterPageLogout {
+header #jpt_masterPageSignup, #jpt_masterPageLogin, #jpt_masterPageAccount, #jpt_masterPagePersonal, #jpt_masterPageUpload, #jpt_masterPageLogout {
     position:relative;
     margin-left: 10px;
     top:-16px;
 }
 header #jpt_masterPageLogout {
     width:auto;
+    height:auto;
+    color:#fff;
+    background:none;
     font-weight:bold;
-    line-height:50px;
+    line-height:21px;
     font-size:1em;
-    padding:0;
-    
+    padding:0px; 
+}
+header #jpt_masterPageLogout:hover {
+    color:#333;
 }
  /*footer setting*/
 footer {
@@ -424,7 +421,6 @@ footer p {
     color:#fff;
 }
 
-
 /*not sign in*/
 #not_sign_in {
     background-image: url('../img/dpgbg/jpt_bg_not_signin.jpg');
@@ -433,4 +429,53 @@ footer p {
     width:100%;
     height:100%;
     position: absolute;
+}
+
+/* personal edit page setting*/
+.personalStyle {
+    width: 850px;
+    height: 600px;
+    margin-top: 7%;
+    margin-left : auto;
+    margin-right : auto;
+    /*margin:13% auto;*/
+    font-family:Arial;
+    /*padding:10px 15px 30px 15px;*/
+    background:#fff;
+}
+
+.personalStyle th {
+    font-size:1.5em;
+    color:#333;
+    height:50px;
+    border-bottom:2px solid #eee;
+}
+
+.personalStyle input {
+    width:160px;
+    line-height:30px;
+    /*padding:0px 7px;*/
+}
+
+.personalStyle tr td{
+    height:70px;
+}
+
+.personalNormalTextBox {
+    height: 20px; 
+    width: 180px
+}
+.personalStyle input[type="submit"] {
+    width:25%;
+    float:right;
+    background:#bbb;
+    border:none;
+    line-height: 40px;
+    font-size: 17px;
+    color: #333;
+    margin:0 10px;
+}
+.personalStyle input[type="submit"]:hover {
+    background:#2cb72a;
+    color:#fff;
 }

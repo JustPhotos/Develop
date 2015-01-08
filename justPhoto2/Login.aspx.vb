@@ -1,6 +1,28 @@
 ﻿
 Partial Class Login
     Inherits System.Web.UI.Page
+    'Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
+    '    If Session("isLoginState") = "OK" Then
+    '        Response.Redirect("~\Personal.aspx")
+    '    Else
+    'Dim link_masterPageSignup As HyperLink = CType(Page.Master.FindControl("jpt_masterPageSignup"), HyperLink)
+    'Dim link_masterPageLogin As HyperLink = CType(Page.Master.FindControl("jpt_masterPageLogin"), HyperLink)
+    'Dim link_masterPageAccount As HyperLink = CType(Page.Master.FindControl("jpt_masterPageAccount"), HyperLink)
+    'Dim link_masterPagePersonal As HyperLink = CType(Page.Master.FindControl("jpt_masterPagePersonal"), HyperLink)
+    'Dim link_masterPageUpload As HyperLink = CType(Page.Master.FindControl("jpt_masterPageUpload"), HyperLink)
+    'Dim link_masterPageLogout As Button = CType(Page.Master.FindControl("jpt_masterPageLogout"), Button)
+
+    '        link_masterPageSignup.Visible = False
+    '        link_masterPageLogin.Visible = False
+    '        link_masterPageAccount.Visible = True
+    '        link_masterPagePersonal.Visible = True
+    '        link_masterPageUpload.Visible = True
+    '        link_masterPageLogout.Visible = True
+
+    '        link_masterPageAccount.Text = Session("jpt_memberAcc").ToString()
+    '    End If
+    'End Sub
+
     Protected Sub BtnLogin_Click(sender As Object, e As EventArgs) Handles BtnLogin.Click
         Dim loginAccountStr As String = LoginPageAccount.Text
         Dim loginPassword As String = LoginPagePassword.Text
@@ -49,7 +71,7 @@ Partial Class Login
                             Session("jpt_id") = getID
                             Session("jpt_memberAcc") = getAccount
                             Session("isLoginState") = "OK"
-                            Response.Redirect("~/Personal.aspx")
+                            Response.Redirect("~/Home.aspx")
 
                             ' login success end
                             Exit While

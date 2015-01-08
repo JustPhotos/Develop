@@ -123,8 +123,9 @@ Partial Class Signup
 
             Select Case getRetCode
                 Case 0
-                    Response.Write("<Script language='JavaScript'>alert('註冊成功！');</Script>")
-                    Response.Redirect("~/Default.aspx")
+                    ScriptManager.RegisterStartupScript(Me, Me.GetType(), "popup", "alert('註冊成功！返回首頁');window.location='Default.aspx';", True)
+                    'Response.Write("<Script language='JavaScript'>alert('註冊成功！');</Script>")
+                    'Response.Redirect("~/Default.aspx")
                 Case 1
                     Response.Write("<Script language='JavaScript'>alert('帳號已經存在，請修改！');</Script>")
                 Case 2
@@ -144,4 +145,6 @@ Partial Class Signup
     'Protected Sub BtnCancel_Click(sender As Object, e As EventArgs) Handles BtnCancel.Click
     '    Response.Redirect("~\Default.aspx")
     'End Sub
+
+
 End Class
