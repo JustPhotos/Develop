@@ -54,6 +54,14 @@ header a {
 header a:hover {
     color:#333;
 }
+header input[type="submit"] {
+    background:none;
+    color:#fff;
+}
+header input[type="submit"]:hover {
+    background:none;
+    color:#333;
+}
 header .logo {
     float: left;
     background:url('../img/JustPhoto_logo.png') no-repeat left 50%;
@@ -93,7 +101,7 @@ header #headPicture {
     margin: 7px 10px;
     /*padding: 7px 10px;*/
 }
-header #jpt_masterPageUpload, #jpt_masterPageSignup, #jpt_masterPageLogin {
+header #jpt_masterPageSignup, #jpt_masterPageLogin, #jpt_masterPageAccount, #jpt_masterPageUpload, #jpt_masterPageLogout {
     position:relative;
     margin-left: 10px;
     top:-16px;
@@ -276,39 +284,40 @@ footer p {
     top:-18px;
 }
 
-/*.signupStyle input[type="submit"] {
-    width:100%;
-    background:#bbb;
-    border:none;
-    line-height: 40px;
-    font-size: 17px;
-    color: #333;
-    margin:0;
-}
-.signupStyle input[type="submit"]:hover {
-    background:#2cb72a;
-    color:#fff;
-}*/
-
 /*Default page ad block*/
 #ad {
     /*padding-bottom: 50px;*/
     /*background-image: url("../img/dpgbg/jpt_bg_c_1.jpg");*/
-    background-image: url("../img/dpgbg/jpt_bg_c_6.jpg");
+    background-image: url('../img/dpgbg/jpt_bg_5.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     width:100%;
     height:100%;
     /*margin:7% auto;*/
-    position:absolute;
+    position: absolute;
+}
+#ad_contents {
+    width: 50%;
+    height: 50%;
+    margin:10% auto;
+    background-color:rgba(0, 0, 0, 0.6);
+    border-radius: 50px;
+    text-align:center;
 }
 #slogan {
-    margin:10% auto;
+    margin:0px auto;
     text-align:center;
     color: #fff;
     font-size:50pt;
     font-family: 微軟正黑體, Arial;
     font-weight:bold;
+    padding-top: 40px;
+}
+#ad_btnpanel {
+    width: 35%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 15%;
 }
 .btnBlock {
     text-align:center;
@@ -316,12 +325,10 @@ footer p {
     min-width:300px;
     height:auto;
     margin: 10% auto;
-    /*margin-right: auto;
-    margin-left: auto;*/
 }
 .btn {
     display:inline-block;
-    margin: 5px auto 40px auto;
+    margin: 5px auto 5px auto;
     background:#bbb;
     border:none;
     line-height:50px;
@@ -330,23 +337,27 @@ footer p {
     color: #333;
     height:20%;
     width:100%;
-    /*margin-top: 5px;
-    margin-bottom: 5px;
-    margin-right: auto;
-    margin-left: auto;*/
-    /*float:left;*/
 }
 .btn:hover {
     background:#2cb72a;
     color:#fff;
 }
 .btnLogin {
+    background:#70DF6F;
+    color: #1e1e1e;
+}
+.btnLogin:hover {
     background:#2cb72a;
     color:#fff;
 }
-.btnLogin:hover {
-    background:#70DF6F;
-    color: #1e1e1e;
+
+.btnNotLogin {
+    background:#2cb72a;
+    color:#fff;
+}
+.btnNotLogin:hover {
+    background:#bbb;
+    color: #333;
 }
 
 #jpt_defaultPageSignup {
@@ -406,3 +417,13 @@ footer p {
     color:#fff;
 }
 
+
+/*not sign in*/
+#not_sign_in {
+    background-image: url('../img/dpgbg/jpt_bg_not_signin.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100%;
+    height:100%;
+    position: absolute;
+}

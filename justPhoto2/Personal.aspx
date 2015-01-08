@@ -13,8 +13,7 @@
             <div class="wrapper">
                 <div class="personBlock">
                     <asp:Label ID="name" runat="server" Text="name"></asp:Label>
-                    <!--<img  ID="headPic" src="" />-->
-                    <asp:Image ID="headPic" runat="server" />
+                    <asp:Image ID="headPic" runat="server" Height="120px" Width="120px" ImageUrl="~/img/guset_448_448.png" />
                 </div>
             </div>
         </div>

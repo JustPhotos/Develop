@@ -50,6 +50,7 @@ Partial Class Login
                             Session("jpt_memberAcc") = getAccount
                             Session("isLoginState") = "OK"
                             Response.Redirect("~/Personal.aspx")
+
                             ' login success end
                             Exit While
                         End If
