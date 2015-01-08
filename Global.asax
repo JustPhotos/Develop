@@ -16,6 +16,9 @@
 
     Sub Session_Start(ByVal sender As Object, ByVal e As EventArgs)
         ' Code that runs when a new session is started
+        Session("jpt_id") = ""
+        Session("jpt_memberAcc") = ""
+        Session("isLoginState") = ""
     End Sub
 
     Sub Session_End(ByVal sender As Object, ByVal e As EventArgs)

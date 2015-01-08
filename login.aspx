@@ -1,21 +1,38 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="login.aspx.vb" Inherits="login" %>
+﻿<%@ Page Title="Just Photos - 登入" Language="VB" MasterPageFile="~/JustPhotoMaster.master" AutoEventWireup="false" CodeFile="Login.aspx.vb" Inherits="Login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <style type="text/css">
+        .auto-style1 {
+            width: 85px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div id="loginBlock">
-        <table>
-            <tr><th colspan="2">Login</th></tr>
+        <table align="center">
             <tr>
-                <td class="auto-style1">信箱&nbsp;&nbsp;</td>
-                <td class="auto-style1"><asp:TextBox ID="email_l" type="email" placeholder="信箱" runat="server"></asp:TextBox></td>
+                <th colspan="2">Login</th>
             </tr>
             <tr>
-                <td>密碼&nbsp;&nbsp;</td>
-                <td><asp:TextBox ID="pw" type="password" maxlength="30" placeholder="密碼" runat="server" ValidateRequestMode="Inherit"></asp:TextBox></td>
+                <td class="auto-style1">
+                    帳號/信箱</td>
+                <td>
+                    <asp:TextBox ID="LoginPageAccount" placeholder="帳號/信箱" runat="server" AutoCompleteType="Disabled"></asp:TextBox>
+                    <br />
+                    <asp:RequiredFieldValidator ID="LoginAccountEmpty" runat="server" ErrorMessage="請輸入帳號或信箱" ControlToValidate="LoginPageAccount" Font-Bold="True" Font-Size="X-Small" ForeColor="Red" EnableClientScript="False" Display="Dynamic"></asp:RequiredFieldValidator>
+                    <asp:CustomValidator ID="LoginAccountNotFound" runat="server" ErrorMessage="帳號/信箱或密碼輸入錯誤" ControlToValidate="LoginPageAccount" Font-Bold="True" Font-Size="X-Small" ForeColor="Red" EnableClientScript="False" Display="Dynamic"></asp:CustomValidator>
+                </td>
             </tr>
             <tr>
-                <td colspan="2"><asp:Button ID="login" runat="server" Text="登入" /></td>
+                <td class="auto-style1">密碼</td>
+                <td>
+                    <asp:TextBox ID="LoginPagePassword" type="password" placeholder="密碼" runat="server" ValidateRequestMode="Inherit" AutoCompleteType="Disabled"></asp:TextBox>
+                    <br />
+                    <asp:RequiredFieldValidator ID="LoginPasswordEmpty" runat="server" ErrorMessage="請輸入密碼" ControlToValidate="LoginPagePassword" Font-Bold="True" Font-Size="X-Small" ForeColor="Red" EnableClientScript="False" Display="Dynamic"></asp:RequiredFieldValidator>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><asp:Button ID="BtnLogin" runat="server" Text="登入" /></td>
             </tr>
         </table>
     </div>

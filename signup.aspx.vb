@@ -1,6 +1,6 @@
-﻿Partial Class _signup
+﻿
+Partial Class Signup
     Inherits System.Web.UI.Page
-
     Protected Sub accountValidator_ServerValidate(source As Object, args As ServerValidateEventArgs) Handles accountValidator.ServerValidate
         Dim accountText As String = TextBoxAccount.Text
         Dim rexUrl As New Regex("[^a-z0-9]")
@@ -26,12 +26,12 @@
         End If
     End Sub
 
-    Protected Sub descriptionValidator_ServerValidate(source As Object, args As ServerValidateEventArgs) Handles descriptionValidator.ServerValidate
-        If TextBoxDescription.Text.Length > 150 Then
-            args.IsValid = False
-            Exit Sub
-        End If
-    End Sub
+    'Protected Sub descriptionValidator_ServerValidate(source As Object, args As ServerValidateEventArgs) Handles descriptionValidator.ServerValidate
+    '    If TextBoxDescription.Text.Length > 150 Then
+    '        args.IsValid = False
+    '        Exit Sub
+    '    End If
+    'End Sub
 
     Protected Sub BtnSubmit_Click(sender As Object, e As EventArgs) Handles BtnSubmit.Click
         'get each information from textbox
@@ -40,11 +40,11 @@
         Dim passwordConfirm As String = TextBoxPasswordConfirm.Text
         Dim email As String = TextBoxEmail.Text
         Dim name As String = TextBoxName.Text
-        Dim description As String = TextBoxDescription.Text
+        'Dim description As String = TextBoxDescription.Text
         Dim headPictureFileNmae As String = ""
 
         Dim checkValidator As Boolean = accountRequired.IsValid And accountValidator.IsValid And pwValidator.IsValid And pwRequired.IsValid And pwcRequired.IsValid And pwcCompare.IsValid And _
-                emailRequired.IsValid And emailValidator.IsValid And nameRequired.IsValid And descriptionValidator.IsValid
+                emailRequired.IsValid And emailValidator.IsValid And nameRequired.IsValid ' And descriptionValidator.IsValid
         If Not checkValidator Then
             Exit Sub
         End If
@@ -112,7 +112,7 @@
         cmd1.Parameters("@password").Value = password
         cmd1.Parameters("@name").Value = name
         cmd1.Parameters("@email").Value = email
-        cmd1.Parameters("@description").Value = description
+        cmd1.Parameters("@description").Value = ""
         cmd1.Parameters("@headPicture").Value = headPictureFileNmae
 
         conn1.Open()
@@ -124,7 +124,7 @@
             Select Case getRetCode
                 Case 0
                     Response.Write("<Script language='JavaScript'>alert('註冊成功！');</Script>")
-                    Response.Redirect("http://google.com.tw")
+                    Response.Redirect("~/Default.aspx")
                 Case 1
                     Response.Write("<Script language='JavaScript'>alert('帳號已經存在，請修改！');</Script>")
                 Case 2
@@ -140,4 +140,8 @@
         dr1.Close()
         conn1.Close()
     End Sub
+
+    'Protected Sub BtnCancel_Click(sender As Object, e As EventArgs) Handles BtnCancel.Click
+    '    Response.Redirect("~\Default.aspx")
+    'End Sub
 End Class
