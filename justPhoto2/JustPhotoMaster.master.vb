@@ -1,5 +1,11 @@
 ﻿Partial Class JustPhotoMaster
     Inherits System.Web.UI.MasterPage
+    Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
+        ' if not login click head pic will not act
+        If Not (Session("isLoginState") = "OK") Then
+            headPicture.Enabled = False
+        End If
+    End Sub
 
     Protected Sub jpt_masterPageLogout_Click(sender As Object, e As EventArgs) Handles jpt_masterPageLogout.Click
         'clear session
@@ -8,6 +14,7 @@
         Session("isLoginState") = ""
 
         'change master page link and button visible
+        headPicture.Visible = False
         jpt_masterPageSignup.Visible = True
         jpt_masterPageLogin.Visible = True
         jpt_masterPageAccount.Visible = False
@@ -41,5 +48,11 @@
 
     Protected Sub jpt_masterPagePersonal_Click(sender As Object, e As EventArgs) Handles jpt_masterPagePersonal.Click
         Response.Redirect("~\Personal.aspx")
+    End Sub
+
+    Protected Sub headPicture_Click(sender As Object, e As ImageClickEventArgs) Handles headPicture.Click
+        If Session("isLoginState") = "OK" Then
+            Response.Redirect("~\UserHeadPic.aspx")
+        End If
     End Sub
 End Class
