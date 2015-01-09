@@ -23,9 +23,9 @@
                     <asp:HyperLink ID="jpt_masterPageSignup" runat="server" NavigateUrl="~/Signup.aspx" Visible="True">註冊</asp:HyperLink>
                     <asp:HyperLink ID="jpt_masterPageLogin" runat="server" NavigateUrl="~/Login.aspx" Visible="True">登入</asp:HyperLink>
                     <%-- after sign in --%>
-                    <asp:HyperLink ID="jpt_masterPageAccount" runat="server" Visible="False">[account]</asp:HyperLink>
+                    <asp:HyperLink ID="jpt_masterPageAccount" runat="server" Visible="False" NavigateUrl="~/UserInfo.aspx">[account]</asp:HyperLink>
+                    <asp:HyperLink ID="jpt_masterPagePersonal" runat="server" Visible="False" NavigateUrl="~/Personal.aspx">個人頁面</asp:HyperLink>
                     <asp:HyperLink ID="jpt_masterPageUpload" runat="server" Visible="False">上傳</asp:HyperLink>
-                    <%--<asp:HyperLink ID="jpt_masterPageLogout" runat="server" Visible="False">登出</asp:HyperLink>--%>
                     <asp:Button ID="jpt_masterPageLogout" runat="server" Text="登出" Visible="False"/>
                 </span>  
             </div>

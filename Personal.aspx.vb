@@ -35,8 +35,8 @@ Partial Class Personal
         jptCommand.CommandType = Data.CommandType.StoredProcedure
         jptCommand.CommandText = "GETUSERINFOBYID"
 
-        jptCommand.Parameters.Add(New System.Data.SqlClient.SqlParameter("@userID", System.Data.SqlDbType.Int))
-        jptCommand.Parameters("@userID").Value = userID
+        jptCommand.Parameters.Add(New System.Data.SqlClient.SqlParameter("@ID", System.Data.SqlDbType.Int))
+        jptCommand.Parameters("@ID").Value = userID
 
         Dim jptDataReader As System.Data.SqlClient.SqlDataReader = Nothing
 
@@ -48,7 +48,7 @@ Partial Class Personal
                 Dim p_account As String = jptDataReader("account").ToString()
                 Dim p_email As String = jptDataReader("email").ToString()
                 Dim p_name As String = jptDataReader("name").ToString()
-                Dim p_description As String = jptDataReader("description").ToString
+                Dim p_description As String = jptDataReader("description").ToString()
 
                 name.Text = p_name
                 description.Text = p_description
