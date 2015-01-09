@@ -62,9 +62,9 @@ header .logo {
     -o-background-size:100%;
     background-size:100%;        
     display:inline-block;
+    width:15%;
     max-width:160px;
     min-width:65px;
-    width:15%;
     height:auto;
     text-indent: -9999px;
 }

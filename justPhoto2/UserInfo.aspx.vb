@@ -59,7 +59,7 @@ Partial Class UserInfo
                         userinfo_TBoxEmail.Text = getEmail
                         userinfo_TBoxName.Text = getName
                         userinfo_TBoxDescription.Text = getDescription
-                        Session("jpt_user_description") = getDescription
+                        Session("jpt_memberDescrip") = getDescription
                     End If
                 Catch ex As Exception
                     Response.Write("<Script language='JavaScript'>alert('" & ex.Message & "');</Script>")
@@ -97,7 +97,7 @@ Partial Class UserInfo
             Exit Sub
         End If
 
-        If (newPWEmpty And newPWCEmpty And (newDescription = Session("jpt_user_description"))) Then
+        If (newPWEmpty And newPWCEmpty And (newDescription = Session("jpt_memberDescrip").ToString())) Then
             ScriptManager.RegisterStartupScript(Me, Me.GetType(), "popup", "alert('資料未更新，導向首頁...');window.location='Home.aspx';", True)
             Exit Sub
         Else
@@ -108,7 +108,7 @@ Partial Class UserInfo
                 Dim jptCommand As System.Data.SqlClient.SqlCommand = New System.Data.SqlClient.SqlCommand
                 jptCommand.Connection = jptConn
                 jptCommand.CommandType = Data.CommandType.StoredProcedure
-                jptCommand.CommandText = "UPDATEUSERINFOBYID"
+                jptCommand.CommandText = "UPDATAUSERINFOBYID"
 
                 jptCommand.Parameters.Add(New System.Data.SqlClient.SqlParameter("@ID", System.Data.SqlDbType.Int))
                 jptCommand.Parameters.Add(New System.Data.SqlClient.SqlParameter("@password", System.Data.SqlDbType.NVarChar, 30))
@@ -116,14 +116,7 @@ Partial Class UserInfo
 
 
                 jptCommand.Parameters("@ID").Value = CType(Session("jpt_id").ToString(), Integer)
-
-                'if pw not change
-                If newPWEmpty Then
-                    ' pw not change
-                    jptCommand.Parameters("@password").Value = System.DBNull.Value
-                Else
-                    jptCommand.Parameters("@password").Value = newPassword
-                End If
+                jptCommand.Parameters("@password").Value = newPassword
                 jptCommand.Parameters("@description").Value = newDescription
 
                 Dim jptDataReader As System.Data.SqlClient.SqlDataReader = Nothing
@@ -139,7 +132,6 @@ Partial Class UserInfo
 
                         Select Case getRetCode
                             Case 0
-                                Session.Remove("jpt_user_description")
                                 ScriptManager.RegisterStartupScript(Me, Me.GetType(), "popup", "alert('資料更新成功！返回首頁');window.location='Home.aspx';", True)
                                 'Response.Write("<Script language='JavaScript'>alert('資料更新成功！');</Script>")
                                 'Response.Redirect("~/Default.aspx")

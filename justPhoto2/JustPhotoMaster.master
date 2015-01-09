@@ -16,7 +16,7 @@
     <div>
         <header>
             <div class="wrapper">
-                <asp:Button ID="mpHeadLogoBtn" runat="server" CssClass="logo" />
+                <a href="Default.aspx" class="logo">JustPhoto</a>
                 <span id="accOpt">
                     <asp:Image ID="headPicture" runat="server" ImageUrl="~/img/guest_35_35.png" Height="35px" Width="35px" />
                     <%-- before sign in --%>
