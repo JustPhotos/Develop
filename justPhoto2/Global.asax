@@ -18,7 +18,6 @@
         ' Code that runs when a new session is started
         Session("jpt_id") = ""
         Session("jpt_memberAcc") = ""
-        Session("jpt_memberDescrip") = ""
         Session("isLoginState") = ""
     End Sub
 
