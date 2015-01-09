@@ -26,4 +26,20 @@
             Response.Redirect("~\Default.aspx")
         End If
     End Sub
+
+    Protected Sub jpt_masterPageSignup_Click(sender As Object, e As EventArgs) Handles jpt_masterPageSignup.Click
+        Response.Redirect("~\Signup.aspx")
+    End Sub
+
+    Protected Sub jpt_masterPageLogin_Click(sender As Object, e As EventArgs) Handles jpt_masterPageLogin.Click
+        Response.Redirect("~\Login.aspx")
+    End Sub
+
+    Protected Sub jpt_masterPageAccount_Click(sender As Object, e As EventArgs) Handles jpt_masterPageAccount.Click
+        Response.Redirect("~\UserInfo.aspx")
+    End Sub
+
+    Protected Sub jpt_masterPagePersonal_Click(sender As Object, e As EventArgs) Handles jpt_masterPagePersonal.Click
+        Response.Redirect("~\Personal.aspx")
+    End Sub
 End Class

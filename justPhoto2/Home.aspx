@@ -7,7 +7,8 @@
         <asp:Image ID="photo" runat="server" />
         <br />
         <asp:Image ID="user" runat="server" />
-        <asp:Label ID="userName" runat="server" Text="userName"></asp:Label>
+        <%--<asp:Label ID="userName" runat="server" Text="userName"></asp:Label>--%>
+        <asp:Button ID="homePageUserName" runat="server" Text="[userName]" />
         <asp:Label ID="photoName" runat="server" Text="photoName"></asp:Label>
     </div>
 </asp:Content>
