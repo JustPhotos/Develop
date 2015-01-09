@@ -18,4 +18,12 @@
         'redirect to default
         Response.Redirect("~\Default.aspx")
     End Sub
+
+    Protected Sub mpHeadLogoBtn_Click(sender As Object, e As EventArgs) Handles mpHeadLogoBtn.Click
+        If Session("isLoginState") = "OK" Then
+            Response.Redirect("~\Home.aspx")
+        Else
+            Response.Redirect("~\Default.aspx")
+        End If
+    End Sub
 End Class
