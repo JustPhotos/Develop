@@ -93,7 +93,7 @@ header #headPicture {
     margin: 7px 10px;
     /*padding: 7px 10px;*/
 }
-header #jpt_masterPageSignup, #jpt_masterPageLogin, #jpt_masterPageAccount, #jpt_masterPageUpload, #jpt_masterPageLogout {
+header #jpt_masterPageSignup, #jpt_masterPageLogin, #jpt_masterPageAccount, #jpt_masterPagePersonal, #jpt_masterPageUpload, #jpt_masterPageLogout {
     position:relative;
     margin-left: 10px;
     top:-16px;
@@ -135,14 +135,13 @@ footer p {
     width: 100%;
     height: 230px;
 }
-.personalBar #description {
+#ContentPlaceHolder1_description {
     color: #fff;
     font-family: Arial , '微軟正黑體';
-    font-size:1em;
+    font-size:18px;
     font-weight:normal;
-    position:absolute;
-    overflow:hidden;
-    bottom:240px;
+    position:relative;
+    top:102px;
 }
 .personalBar .personBlock {
     height: 120px;
@@ -153,10 +152,10 @@ footer p {
     top: 65px;
     z-index:5;
 }
-.personalBar #headPic {
+.personalBar #ContentPlaceHolder1_headPic {
     width: 120px;
     height: 120px;
-    border: 1px solid #333;
+    border: 1px solid #777;
     padding: 10px;
     position: relative;
     z-index: 10;
@@ -164,14 +163,14 @@ footer p {
     background: #fff;
     box-sizing:border-box;
 }
-.personalBar #name {
+.personalBar #ContentPlaceHolder1_name {
     color: #333;
-    font-size: 20px;
+    font-size: 18px;
     font-family: Arial , '微軟正黑體';
-    top:0px;
+    top:-15px;
     position:relative;
     text-align:right;
-    margin-right:1%;
+    margin-right:0.7%;
 }
 .personalBar .grayBar {
     width: 100%;
@@ -303,26 +302,31 @@ footer p {
 }
 #ad_contents {
     width: 50%;
-    height: 50%;
+    /*height: 50%;*/
+    height:auto;
     margin:10% auto;
     background-color:rgba(0, 0, 0, 0.6);
     border-radius: 50px;
     text-align:center;
+    padding: 2% 1%;
 }
 #slogan {
-    margin:0px auto;
+    /*margin:0px auto;*/
     text-align:center;
     color: #fff;
     font-size:50pt;
     font-family: 微軟正黑體, Arial;
     font-weight:bold;
-    padding-top: 40px;
+    /*padding-top: 40px;*/
+    padding: 2% 0px 5% 0px;
+    display:inline-block;
 }
 #ad_btnpanel {
     width: 35%;
-    margin-left:auto;
+    /*margin-left:auto;
     margin-right:auto;
-    margin-top: 15%;
+    margin-top: 15%;*/
+    margin:2% auto;
 }
 .btnBlock {
     text-align:center;
@@ -422,7 +426,6 @@ footer p {
     color:#fff;
 }
 
-
 /*not sign in*/
 #not_sign_in {
     background-image: url('../img/dpgbg/jpt_bg_not_signin.jpg');
@@ -431,4 +434,53 @@ footer p {
     width:100%;
     height:100%;
     position: absolute;
+}
+
+/* personal edit page setting*/
+.personalStyle {
+    width: 850px;
+    height: 600px;
+    margin-top: 7%;
+    margin-left : auto;
+    margin-right : auto;
+    /*margin:13% auto;*/
+    font-family:Arial;
+    /*padding:10px 15px 30px 15px;*/
+    background:#fff;
+}
+
+.personalStyle th {
+    font-size:1.5em;
+    color:#333;
+    height:50px;
+    border-bottom:2px solid #eee;
+}
+
+.personalStyle input {
+    width:160px;
+    line-height:30px;
+    /*padding:0px 7px;*/
+}
+
+.personalStyle tr td{
+    height:70px;
+}
+
+.personalNormalTextBox {
+    height: 20px; 
+    width: 180px
+}
+.personalStyle input[type="submit"] {
+    width:25%;
+    float:right;
+    background:#bbb;
+    border:none;
+    line-height: 40px;
+    font-size: 17px;
+    color: #333;
+    margin:0 10px;
+}
+.personalStyle input[type="submit"]:hover {
+    background:#2cb72a;
+    color:#fff;
 }
