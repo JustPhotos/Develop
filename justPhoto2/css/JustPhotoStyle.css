@@ -1,4 +1,4 @@
-﻿/**Reset**/
+/**Reset**/
 h1, h2, h3, h4, h5, h6, a, li, p {
     font-family:'微軟正黑體','Arial';
 }
@@ -46,6 +46,9 @@ header {
     z-index:10;
     top:0px;
 }
+header .wrapper {
+    padding:0;
+}
 header a {
     color:#fff;
     font-weight:bold;
@@ -81,7 +84,24 @@ header #accOpt { /*靠右*/
     position:relative;
     float: right;
     width: 70%;
-    margin-right: 5%;
+    height:50px;
+    line-height:50px;
+}
+header #accOpt input[type='submit'] {
+    width:auto;
+    height:50px;
+    line-height:50px;
+    color:#fff;
+    font-weight:bold;
+    padding:0px 10px;
+    margin:0px;
+    font-size:16px;
+    position:relative;
+    background:none;
+    bottom:0px;
+}
+header #accOpt input[type='submit']:hover {
+    background:#8CE88B;
 }
 header #headPicture {
     width: 35px;
@@ -96,17 +116,7 @@ header #headPicture {
 header #jpt_masterPageSignup, #jpt_masterPageLogin, #jpt_masterPageAccount, #jpt_masterPagePersonal, #jpt_masterPageUpload, #jpt_masterPageLogout {
     position:relative;
     margin-left: 10px;
-    top:-16px;
-}
-header #jpt_masterPageLogout {
-    width:auto;
-    height:auto;
-    color:#fff;
-    background:none;
-    font-weight:bold;
-    line-height:21px;
-    font-size:1em;
-    padding:0px; 
+    top:-19px;
 }
 header #jpt_masterPageLogout:hover {
     color:#333;
@@ -135,14 +145,13 @@ footer p {
     width: 100%;
     height: 230px;
 }
-.personalBar #description {
+.personalBar #ContentPlaceHolder1_description {
     color: #fff;
     font-family: Arial , '微軟正黑體';
-    font-size:1em;
+    font-size:18px;
     font-weight:normal;
-    position:absolute;
-    overflow:hidden;
-    bottom:240px;
+    position:relative;
+    top:102px;
 }
 .personalBar .personBlock {
     height: 120px;
@@ -153,25 +162,25 @@ footer p {
     top: 65px;
     z-index:5;
 }
-.personalBar #headPic {
+.personalBar #ContentPlaceHolder1_headPic {
     width: 120px;
     height: 120px;
-    border: 1px solid #333;
-    padding: 10px;
+    border: 1px solid #777;
+    padding: 5px;
     position: relative;
     z-index: 10;
     margin-left: 0px;
     background: #fff;
     box-sizing:border-box;
 }
-.personalBar #name {
+.personalBar #ContentPlaceHolder1_name {
     color: #333;
     font-size: 20px;
     font-family: Arial , '微軟正黑體';
-    top:0px;
+    top:-15px;
     position:relative;
     text-align:right;
-    margin-right:1%;
+    margin-right:0.7%;
 }
 .personalBar .grayBar {
     width: 100%;
@@ -186,39 +195,44 @@ footer p {
 /********************content block setting**********************/
 .block {
     width: 720px;
-    height: auto;
+    height: 480px;
     border: 2px solid #000;
-    margin: 50px auto;
+    margin: 30px auto;
     padding: 40px;
     box-sizing:border-box;
     background:#fff;
 }
-.block #photo {
+.block .photo {
     width: 640px;
-    height: auto;
+    height: 360px;
 }
-.block #user {
+.block .user {
     width: 35px;
     height: 35px;
     -webkit-border-radius: 35px;
     -moz-border-radius: 35px;
     border-radius: 35px;
     border: none;
-    margin: 20px 10px 0px 0px;
+    margin: 15px 10px 0px 0px;
     background: #333;
+    background:url("img/guest_35_35.png");
 }
-.block #userName {
+.block .userName {
     color: #707070;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: normal;
     font-family: Arial;
+    position:relative;
+    top:-10px;
 }
-.block #photoName {
+.block .photoName {
     color: #707070;
     font-size: 20px;
     font-weight:normal;
     font-family: AArial,'微軟正黑體';
     padding-left:20px;
+    position:relative;
+    top:-10px;
 }
 /*login signup page setting*/
 #loginBlock {
@@ -261,11 +275,9 @@ footer p {
 }
 #uploadBlock {
     font-family:Arial,'微軟正黑體';
-    width:750px;
-    height:auto;
+    width:270px;
+    height: auto;
     margin:7% auto;
-    font-family:Arial;
-    /*padding:10px 15px 30px 15px;*/
     background:#fff;
 }
 #uploadBlock th {
@@ -282,6 +294,12 @@ footer p {
 }
 #uploadBlock td {
     width:100%;
+}
+#uploadBtn {
+    display: inline-block;
+    font-size:0.9em;
+    position:relative;
+    top:-18px;
 }
 
 /*Default page ad block*/
@@ -505,4 +523,3 @@ footer p {
 }
 #uploadHeadBlock td {
     width:100%;
-}
