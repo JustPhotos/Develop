@@ -6,13 +6,15 @@ Partial Class Personal
         If Not Session("isLoginState") = "OK" Then
             Response.Redirect("~\NotSignin.aspx")
         Else
-            Dim link_masterPageSignup As HyperLink = CType(Page.Master.FindControl("jpt_masterPageSignup"), HyperLink)
-            Dim link_masterPageLogin As HyperLink = CType(Page.Master.FindControl("jpt_masterPageLogin"), HyperLink)
-            Dim link_masterPageAccount As HyperLink = CType(Page.Master.FindControl("jpt_masterPageAccount"), HyperLink)
-            Dim link_masterPagePersonal As HyperLink = CType(Page.Master.FindControl("jpt_masterPagePersonal"), HyperLink)
-            Dim link_masterPageUpload As HyperLink = CType(Page.Master.FindControl("jpt_masterPageUpload"), HyperLink)
+            Dim link_masterPageHeadPic As ImageButton = CType(Page.Master.FindControl("headPicture"), ImageButton)
+            Dim link_masterPageSignup As Button = CType(Page.Master.FindControl("jpt_masterPageSignup"), Button)
+            Dim link_masterPageLogin As Button = CType(Page.Master.FindControl("jpt_masterPageLogin"), Button)
+            Dim link_masterPageAccount As Button = CType(Page.Master.FindControl("jpt_masterPageAccount"), Button)
+            Dim link_masterPagePersonal As Button = CType(Page.Master.FindControl("jpt_masterPagePersonal"), Button)
+            Dim link_masterPageUpload As Button = CType(Page.Master.FindControl("jpt_masterPageUpload"), Button)
             Dim link_masterPageLogout As Button = CType(Page.Master.FindControl("jpt_masterPageLogout"), Button)
 
+            link_masterPageHeadPic.Visible = True
             link_masterPageSignup.Visible = False
             link_masterPageLogin.Visible = False
             link_masterPageAccount.Visible = True
@@ -21,8 +23,12 @@ Partial Class Personal
             link_masterPageLogout.Visible = True
 
             link_masterPageAccount.Text = Session("jpt_memberAcc").ToString()
+            If Not Session("jpt_memberHeadPic") = "" Then
+                link_masterPageHeadPic.ImageUrl = "~/img/hdp/" + Session("jpt_id") + "/" + Session("jpt_memberHeadPic")
+            Else
+                link_masterPageHeadPic.ImageUrl = "~/img/guset_448_448.png"
+            End If
         End If
-
 
         '-------灰白橫幅上的
         Dim jptConn As System.Data.SqlClient.SqlConnection = New Data.SqlClient.SqlConnection
@@ -45,13 +51,13 @@ Partial Class Personal
             jptDataReader = jptCommand.ExecuteReader
 
             While jptDataReader.Read()
-                Dim p_account As String = jptDataReader("account").ToString()
-                Dim p_email As String = jptDataReader("email").ToString()
-                Dim p_name As String = jptDataReader("name").ToString()
-                Dim p_description As String = jptDataReader("description").ToString()
+                Dim ud_account As String = jptDataReader("account").ToString()
+                Dim ud_email As String = jptDataReader("email").ToString()
+                Dim ud_name As String = jptDataReader("name").ToString()
+                Dim ud_description As String = jptDataReader("description").ToString
 
-                name.Text = p_name
-                description.Text = p_description
+                name.Text = ud_name
+                description.Text = ud_description
             End While
         Catch ex As Exception
 
@@ -67,98 +73,60 @@ Partial Class Personal
             End If
         End Try
 
-    End Sub
-
-    Private Sub UserData(userID As Integer)
-        Dim myConn As System.Data.SqlClient.SqlConnection
-        myConn = New Data.SqlClient.SqlConnection
-        Dim strConn As String = ConfigurationManager.ConnectionStrings("JustPhotoDBConnStr").ConnectionString.ToString()
-        myConn.ConnectionString = strConn
-
-        Dim myCommand As System.Data.SqlClient.SqlCommand
-        myCommand = New System.Data.SqlClient.SqlCommand
-        myCommand.Connection = myConn
-        myCommand.CommandType = Data.CommandType.StoredProcedure
-        myCommand.CommandText = "GETUSERINFOBYID"
-        myCommand.Parameters.Add(New System.Data.SqlClient.SqlParameter("@userID", System.Data.SqlDbType.Int))
-        myCommand.Parameters("@userID").Value = 1
-        '"SELECT * from dbjpt_Users where dbjpt_Users.ID  = @userID "
-
-        Dim dr As System.Data.SqlClient.SqlDataReader = Nothing
-
-        Try
-            myConn.Open()
-            dr = myCommand.ExecuteReader
-
-            Dim name As String = dr("name").ToString()
-            Dim description As String = dr("description").ToString
-            Dim headPictureURL As String = dr("headPicture").ToString
-
-        Catch ex As Exception
-            '--Error Handling
-
-        Finally
-            If Not (dr Is Nothing) Then
-                myCommand.Cancel()
-                dr.Close()
-            End If
-
-            If (myConn.State = System.Data.ConnectionState.Open) Then
-                myConn.Close()
-                myConn.Dispose()
-            End If
-        End Try
-
+        If Not Page.IsPostBack Then
+            BindPhoto()
+        End If
 
     End Sub
 
     Private Sub BindPhoto()
+        Dim jptConn As System.Data.SqlClient.SqlConnection = New Data.SqlClient.SqlConnection
+        jptConn.ConnectionString = ConfigurationManager.ConnectionStrings("JustPhotoDBConnStr").ConnectionString.ToString()
+
+        Dim jptCommand As System.Data.SqlClient.SqlCommand
+        jptCommand = New System.Data.SqlClient.SqlCommand
+        jptCommand.Connection = jptConn
+        jptCommand.CommandType = Data.CommandType.StoredProcedure
+        jptCommand.CommandText = "GETPHOTOBYUSERID"
+
+        jptCommand.Parameters.Add(New System.Data.SqlClient.SqlParameter("@ID", System.Data.SqlDbType.Int))
+        jptCommand.Parameters("@ID").Value = Integer.Parse(Session("jpt_id"))
+
+        Dim jptDataReader As System.Data.SqlClient.SqlDataReader = Nothing
+
         Try
-            Dim myConn As System.Data.SqlClient.SqlConnection
-            myConn = New System.Data.SqlClient.SqlConnection
-            Dim strConn As String = ConfigurationManager.ConnectionStrings("JustPhotoDBConnStr").ConnectionString.ToString()
-            myConn.ConnectionString = strConn
+            jptConn.Open()
+            jptDataReader = jptCommand.ExecuteReader
+            photoList.DataSource = jptDataReader
+            photoList.DataBind()
 
-            Dim myCommand As System.Data.SqlClient.SqlCommand
-            myCommand = New System.Data.SqlClient.SqlCommand
-            myCommand.Connection = myConn
-            myCommand.CommandType = Data.CommandType.Text
-            myCommand.CommandText = "select 10 from dbjpt_Photos order date"
+            While jptDataReader.Read()
 
-            Dim dr As System.Data.SqlClient.SqlDataReader = Nothing
+                Dim bp_photoID As String = jptDataReader("photoID").ToString()
+                Dim bp_photoName As String = jptDataReader("photoName").ToString()
+                Dim bp_userName As String = jptDataReader("userName").ToString()
+                Dim bp_userHeadPicture As String = jptDataReader("userHeadPicture").ToString
 
-            Try
-                myConn.Open()
-                dr = myCommand.ExecuteReader
-
-                While (dr.Read())
-                    photo.ImageUrl = dr("photo").ToString
-                    '--利用user去找userName和headPicture---
-                    Dim userID As Integer = dr("user")
-                    UserData(userID)
-                    '--------------------------------------
-                    photoName.Text = dr("name").ToString
-
-
-                End While
-            Catch ex As Exception
-                '--Error Handling
-
-            Finally
-                If Not (dr Is Nothing) Then
-                    myCommand.Cancel()
-                    dr.Close()
-                End If
-
-                If (myConn.State = System.Data.ConnectionState.Open) Then
-                    myConn.Close()
-                    myConn.Dispose()
-                End If
-            End Try
+                photo.ImageUrl = "\img\urspics\" + Session("jpt_id").ToString + "_" + Session("jpt_memberAcc").ToString '--DATE!!
+                user.ImageUrl = bp_userHeadPicture.ToString()
+                userName.Text = bp_userName.ToString()
+                photoName.Text = bp_photoName.ToString()
+            End While
         Catch ex As Exception
-            '--Error Handling
+
+        Finally
+            If Not (jptDataReader Is Nothing) Then
+                jptCommand.Cancel()
+                jptDataReader.Close()
+            End If
+
+            If (jptConn.State = System.Data.ConnectionState.Open) Then
+                jptConn.Close()
+                jptConn.Dispose()
+            End If
         End Try
     End Sub
+
 
 
 End Class
