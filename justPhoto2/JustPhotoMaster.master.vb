@@ -5,6 +5,7 @@
         'clear session
         Session("jpt_id") = ""
         Session("jpt_memberAcc") = ""
+        Session("jpt_memberHeadPic") = ""
         Session("isLoginState") = ""
 
         'change master page link and button visible

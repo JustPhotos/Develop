@@ -23,6 +23,11 @@ Partial Class UserInfo
             link_masterPageLogout.Visible = True
 
             link_masterPageAccount.Text = Session("jpt_memberAcc").ToString()
+            If Not Session("jpt_memberHeadPic") = "" Then
+                link_masterPageHeadPic.ImageUrl = "~/img/hdp/" + Session("jpt_id") + "/" + Session("jpt_memberHeadPic")
+            Else
+                link_masterPageHeadPic.ImageUrl = "~/img/guset_448_448.png"
+            End If
         End If
 
         If ((Session("isLoginState") = "") Or (Session("jpt_id") = "")) Then
@@ -95,7 +100,7 @@ Partial Class UserInfo
         Dim newPWCEmpty As Boolean = (newPasswordConfirm = String.Empty)
 
         'if pw less than 7 character
-        If Not pwValidator.IsValid Then
+        If Not (pwValidator.IsValid And pwcCompare.IsValid) Then
             Exit Sub
         End If
 

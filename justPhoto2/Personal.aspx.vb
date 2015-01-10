@@ -23,6 +23,11 @@ Partial Class Personal
             link_masterPageLogout.Visible = True
 
             link_masterPageAccount.Text = Session("jpt_memberAcc").ToString()
+            If Not Session("jpt_memberHeadPic") = "" Then
+                link_masterPageHeadPic.ImageUrl = "~/img/hdp/" + Session("jpt_id") + "/" + Session("jpt_memberHeadPic")
+            Else
+                link_masterPageHeadPic.ImageUrl = "~/img/guset_448_448.png"
+            End If
         End If
     End Sub
 End Class

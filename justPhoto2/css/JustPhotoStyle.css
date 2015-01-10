@@ -283,12 +283,6 @@ footer p {
 #uploadBlock td {
     width:100%;
 }
-#uploadBtn {
-    display: inline-block;
-    font-size:0.9em;
-    position:relative;
-    top:-18px;
-}
 
 /*Default page ad block*/
 #ad {
@@ -485,4 +479,30 @@ footer p {
 .personalStyle input[type="submit"]:hover {
     background:#2cb72a;
     color:#fff;
+}
+
+/*upload head picture style*/
+#uploadHeadBlock {
+    font-family:Arial,'微軟正黑體';
+    width:750px;
+    height:auto;
+    margin:7% auto;
+    font-family:Arial;
+    /*padding:10px 15px 30px 15px;*/
+    background:#fff;
+}
+#uploadHeadBlock th {
+    width:100%;
+    text-align:center;
+    font-size:1.5em;
+    color:#333;
+    height:50px;
+    border-bottom:1px solid #eee;
+}
+#uploadHeadBlock tr {
+    height: 50px;
+    width:auto;
+}
+#uploadHeadBlock td {
+    width:100%;
 }

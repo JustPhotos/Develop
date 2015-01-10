@@ -18,6 +18,8 @@
         ' Code that runs when a new session is started
         Session("jpt_id") = ""
         Session("jpt_memberAcc") = ""
+        Session("jpt_memberHeadPic") = ""
+        Session("jpt_memberHeadPicSelected") = "0"
         Session("isLoginState") = ""
     End Sub
 

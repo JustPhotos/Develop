@@ -5,12 +5,15 @@
 //type: "image/png"
 //webkitRelativePath: ""
 
-function fileUploadCheck() {
-    //var $fileupload = $('#ContentPlaceHolder1_UploadPageFileUpload');
+/*
+*       UploadPicturePageCheck function
+*       no parameter
+*       just check for UploadPicture.aspx page that the file limit
+*       file size less than 5mb
+*       file type allow image/png image/jpg image/jpeg
+*/
+function UploadPicturePageCheck() {
     var $fileupload = $('#UploadPageFileUpload');
-    
-    //debug
-    //console.log($fileupload);
 
     var gotFile;
 
@@ -33,13 +36,11 @@ function fileUploadCheck() {
 
         // second check file size
         var fileSize = gotFile.size;
-        if (fileSize > 40960) {
-            alert('檔案大小超過上傳限制，請選擇5MB以下之檔案');
+        if (fileSize > 5242880) {
+            alert('檔案大小超過上傳限制，請選擇5 MB以下之檔案');
+            $('#UploadPageFileUpload')[0].value = '';
             return;
         }
-
-        // debug
-        //alert('檔名：' + gotFile.name + '<br />檔案大小：' + gotFile.size + ' 位元組');
 
         var imgFileReader = new FileReader();
         var thisImg = new Image();
@@ -82,4 +83,77 @@ function UploadPicturePageReset() {
     $('#UploadPageTempPreview').attr('hidden', 'hidden');
     $('#BtnUploadPicPageReset').attr('hidden', 'hidden');
     $('#UploadPageFileUpload').removeAttr('hidden');
+}
+
+/*
+*       UserHeadPicPageCheck function
+*       no parameter
+*       just check for UserHeadPic.aspx page that the file limit
+*       file size less than 1mb
+*       file type allow image/png image/jpg image/jpeg
+*/
+function UserHeadPicPageCheck() {
+    var $fileupload = $('#UserHeadPicPageFileUpload');
+
+    var gotFile;
+
+    // browser not support input type file
+    if (!$fileupload[0].files) {
+        alert('瀏覽器不支援本網站上傳方式');
+    } else if (!$fileupload[0].files[0]) {
+        // if select file
+        //alert('尚未選擇檔案');
+    } else {
+        // get select file
+        gotFile = $fileupload[0].files[0];
+
+        // first check file extension
+        var fileType = gotFile.type;
+        if (fileType != 'image/png' && fileType != 'image/jpeg' && fileType != 'image/jpg') {
+            alert('檔案格式錯誤，需為jpeg、jpg、png檔案格式');
+            return;
+        }
+
+        // second check file size
+        var fileSize = gotFile.size;
+        if (fileSize > 1048576) {
+            alert('檔案大小超過上傳限制，請選擇1 MB以下之檔案');
+            $('#UserHeadPicPageFileUpload')[0].value = '';
+            return;
+        }
+
+        var imgFileReader = new FileReader();
+        var thisImg = new Image();
+
+        imgFileReader.readAsDataURL(gotFile);
+
+        imgFileReader.onload = function (_file) {
+            thisImg.src = _file.target.result;
+
+            thisImg.onload = function () {
+                if (this.width > 120) {
+                    var picWidth = this.width;
+                    var picHeight = this.height;
+                    // rate for resize
+                    var sizeRate = picHeight / picWidth;
+                    // new height for pic
+                    var newHeight = 120 * sizeRate;
+                    // resize pic
+                    this.width = 120;
+                    this.height = newHeight;
+                }
+                $('#UserHeadPicPageTempPreview').attr('src', this.src);
+                $('#UserHeadPicPageTempPreview').attr('width', this.width);
+                $('#UserHeadPicPageTempPreview').attr('height', this.height);
+                $('#UserHeadPicPageTempPreview').attr('alt', '已有頭像可預覽');
+            };
+        };
+    }
+}
+
+function UserHeadPicPageReset() {
+    $('#UserHeadPicPageFileUpload')[0].value = '';
+
+    // change display
+    $('#UserHeadPicPageTempPreview').attr('src', '/img/guset_448_448.png');
 }

@@ -22,6 +22,11 @@ Partial Class UploadPicture
             link_masterPageLogout.Visible = True
 
             link_masterPageAccount.Text = Session("jpt_memberAcc").ToString()
+            If Not Session("jpt_memberHeadPic") = "" Then
+                link_masterPageHeadPic.ImageUrl = "~/img/hdp/" + Session("jpt_id") + "/" + Session("jpt_memberHeadPic")
+            Else
+                link_masterPageHeadPic.ImageUrl = "~/img/guset_448_448.png"
+            End If
         End If
     End Sub
 
@@ -37,8 +42,8 @@ Partial Class UploadPicture
         Dim userId As String = Session("jpt_id")
         Dim userAccount As String = Session("jpt_memberAcc")
 
-        ' dim pic stored path to ~\
-        Dim pathStr As String = "~\img\urspics\" & userId & "\"
+        ' dim pic stored path to "~/img/urspics/" & userId & "/"
+        Dim pathStr As String = "~/img/urspics/" & userId & "/"
         Dim path As String = Server.MapPath(pathStr)
 
         ' get pic description
