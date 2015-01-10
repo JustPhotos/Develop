@@ -136,7 +136,7 @@ footer p {
     height: 230px;
 }
 .personalBar #description {
-    color: #fff;
+    color: #333;
     font-family: Arial , '微軟正黑體';
     font-size:1em;
     font-weight:normal;
@@ -484,8 +484,8 @@ footer p {
 /*upload head picture style*/
 #uploadHeadBlock {
     font-family:Arial,'微軟正黑體';
-    width:750px;
-    height:auto;
+    width:280px;
+    height:330px;
     margin:7% auto;
     font-family:Arial;
     /*padding:10px 15px 30px 15px;*/

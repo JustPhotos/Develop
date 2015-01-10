@@ -20,6 +20,8 @@
         Session("jpt_memberAcc") = ""
         Session("jpt_memberHeadPic") = ""
         Session("jpt_memberHeadPicSelected") = "0"
+        Session("jpt_memberName") = ""
+        Session("jpt_memberDescrip") = ""
         Session("isLoginState") = ""
     End Sub
 

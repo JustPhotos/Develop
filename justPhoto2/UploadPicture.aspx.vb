@@ -25,7 +25,7 @@ Partial Class UploadPicture
             If Not Session("jpt_memberHeadPic") = "" Then
                 link_masterPageHeadPic.ImageUrl = "~/img/hdp/" + Session("jpt_id") + "/" + Session("jpt_memberHeadPic")
             Else
-                link_masterPageHeadPic.ImageUrl = "~/img/guset_448_448.png"
+                link_masterPageHeadPic.ImageUrl = "~/img/guest_35_35.png"
             End If
         End If
     End Sub

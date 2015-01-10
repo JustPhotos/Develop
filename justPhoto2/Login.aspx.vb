@@ -38,6 +38,8 @@ Partial Class Login
                     Dim getEmail As String = jptDataReader(2)
                     Dim getPassword As String = jptDataReader(3)
                     Dim getHeadPic As String = jptDataReader(4)
+                    Dim getName As String = jptDataReader(5)
+                    Dim getDescription As String = jptDataReader(6)
 
                     'if find account or email
                     If (getAccount = loginAccountStr) Or (getEmail = loginAccountStr) Then
@@ -51,6 +53,8 @@ Partial Class Login
                             Session("jpt_id") = getID
                             Session("jpt_memberAcc") = getAccount
                             Session("jpt_memberHeadPic") = getHeadPic
+                            Session("jpt_memberName") = getName
+                            Session("jpt_memberDescrip") = getDescription
                             Session("isLoginState") = "OK"
                             Response.Redirect("~/Home.aspx")
 

@@ -12,7 +12,6 @@
                 <tr>
                     <td style ="text-align : center ;">
                         <asp:FileUpload ID="UserHeadPicPageFileUpload" runat="server" onchange="UserHeadPicPageCheck();" ClientIDMode="Static" style="display:none;" />
-                        <br />
                         <asp:Button ID="BtnUserHeadPicPageReset" runat="server" Text="清除選取" ClientIDMode="Static" />
                         <%--<input id="BtnUserHeadPicPageReset" type="button" value="清除選取" onclick="UserHeadPicPageReset();"/>--%>
                         <br />
