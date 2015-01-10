@@ -25,9 +25,15 @@ Partial Class Personal
             link_masterPageAccount.Text = Session("jpt_memberAcc").ToString()
             If Not Session("jpt_memberHeadPic") = "" Then
                 link_masterPageHeadPic.ImageUrl = "~/img/hdp/" + Session("jpt_id") + "/" + Session("jpt_memberHeadPic")
+                headPic.ImageUrl = "~/img/hdp/" + Session("jpt_id") + "/" + Session("jpt_memberHeadPic")
             Else
-                link_masterPageHeadPic.ImageUrl = "~/img/guset_448_448.png"
+                link_masterPageHeadPic.ImageUrl = "~/img/guest_35_35.png"
+                headPic.ImageUrl = "~/img/guset_448_448.png"
             End If
+
+            name.Text = Session("jpt_memberName")
+            description.Text = Session("jpt_memberDescrip")
+
         End If
     End Sub
 End Class
