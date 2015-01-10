@@ -34,6 +34,48 @@ Partial Class Personal
             name.Text = Session("jpt_memberName")
             description.Text = Session("jpt_memberDescrip")
 
+            LoadPersonalPhotos()
         End If
+    End Sub
+
+    Private Sub LoadPersonalPhotos()
+        Try
+            Dim jptConn As System.Data.SqlClient.SqlConnection = New System.Data.SqlClient.SqlConnection
+            jptConn.ConnectionString = ConfigurationManager.ConnectionStrings("JustPhotoDBConnStr").ConnectionString.ToString()
+
+            Dim jptCommand As System.Data.SqlClient.SqlCommand = New System.Data.SqlClient.SqlCommand
+            jptCommand.Connection = jptConn
+            jptCommand.CommandType = Data.CommandType.StoredProcedure
+            jptCommand.CommandText = "GETPERSONALPHOTOSBYID"
+
+            jptCommand.Parameters.Add(New System.Data.SqlClient.SqlParameter("@ID", System.Data.SqlDbType.Int))
+            jptCommand.Parameters("@ID").Value = CType(Session("jpt_id").ToString(), Integer)
+
+
+            Dim jptDataReader As System.Data.SqlClient.SqlDataReader = Nothing
+
+            Try
+                jptConn.Open()
+                jptDataReader = jptCommand.ExecuteReader
+
+                If jptDataReader.Read() Then
+                    
+                End If
+            Catch ex As Exception
+                Response.Write("<Script language='JavaScript'>alert('" & ex.Message & "');</Script>")
+            Finally
+                If Not (jptDataReader Is Nothing) Then
+                    jptCommand.Cancel()
+                    jptDataReader.Close()
+                End If
+
+                If (jptConn.State = System.Data.ConnectionState.Open) Then
+                    jptConn.Close()
+                    jptConn.Dispose()
+                End If
+            End Try
+        Catch ex As Exception
+            Response.Write("<Script language='JavaScript'>alert('" & ex.Message & "');</Script>")
+        End Try
     End Sub
 End Class

@@ -18,12 +18,12 @@
             </div>
         </div>
     </div>
-    <div class="block" id="photoID">
-        <asp:Image ID="photo" runat="server" />
+    <div class="block" id="photoID_">
+        <asp:Image ID="UserPhoto_" runat="server" CssClass="photo" />
         <br />
-        <asp:Image ID="user" runat="server" />
-        <asp:Label ID="userName" runat="server" Text="userName"></asp:Label>
-        <asp:Label ID="photoName" runat="server" Text="photoName"></asp:Label>
+        <asp:Image ID="UserHeadPic_" runat="server" CssClass="user" />
+        <asp:Label ID="UserName_" runat="server" Text="[user name]" CssClass ="userName"></asp:Label>
+        <asp:Label ID="UserPhotoDescription_" runat="server" Text="[photo description]" CssClass="photoName"></asp:Label>
     </div>
 </asp:Content>
 

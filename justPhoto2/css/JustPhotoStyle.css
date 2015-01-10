@@ -1,4 +1,4 @@
-/**Reset**/
+﻿/**Reset**/
 h1, h2, h3, h4, h5, h6, a, li, p {
     font-family:'微軟正黑體','Arial';
 }
@@ -46,9 +46,6 @@ header {
     z-index:10;
     top:0px;
 }
-header .wrapper {
-    padding:0;
-}
 header a {
     color:#fff;
     font-weight:bold;
@@ -84,24 +81,7 @@ header #accOpt { /*靠右*/
     position:relative;
     float: right;
     width: 70%;
-    height:50px;
-    line-height:50px;
-}
-header #accOpt input[type='submit'] {
-    width:auto;
-    height:50px;
-    line-height:50px;
-    color:#fff;
-    font-weight:bold;
-    padding:0px 10px;
-    margin:0px;
-    font-size:16px;
-    position:relative;
-    background:none;
-    bottom:0px;
-}
-header #accOpt input[type='submit']:hover {
-    background:#8CE88B;
+    margin-right: 5%;
 }
 header #headPicture {
     width: 35px;
@@ -116,9 +96,19 @@ header #headPicture {
 header #jpt_masterPageSignup, #jpt_masterPageLogin, #jpt_masterPageAccount, #jpt_masterPagePersonal, #jpt_masterPageUpload, #jpt_masterPageLogout {
     position:relative;
     margin-left: 10px;
-    top:-19px;
+    top:-16px;
 }
-header #jpt_masterPageLogout:hover {
+header #jpt_masterPageSignup, #jpt_masterPageLogin, #jpt_masterPageAccount, #jpt_masterPagePersonal, #jpt_masterPageUpload, #jpt_masterPageLogout {
+    width:auto;
+    height:auto;
+    color:#fff;
+    background:none;
+    font-weight:bold;
+    line-height:21px;
+    font-size:1em;
+    padding:0px; 
+}
+header #jpt_masterPageSignup:hover, #jpt_masterPageLogin:hover, #jpt_masterPageAccount:hover, #jpt_masterPagePersonal:hover, #jpt_masterPageUpload:hover, #jpt_masterPageLogout:hover {
     color:#333;
 }
  /*footer setting*/
@@ -145,18 +135,15 @@ footer p {
     width: 100%;
     height: 230px;
 }
-<<<<<<< HEAD
-.personalBar #ContentPlaceHolder1_description {
-    color: #fff;
-=======
 .personalBar #description {
     color: #333;
->>>>>>> origin/master
     font-family: Arial , '微軟正黑體';
-    font-size:18px;
+    font-size:1em;
     font-weight:normal;
-    position:relative;
-    top:102px;
+    position:absolute;
+    overflow:hidden;
+    bottom:741px;
+    left: 86px;
 }
 .personalBar .personBlock {
     height: 120px;
@@ -167,25 +154,25 @@ footer p {
     top: 65px;
     z-index:5;
 }
-.personalBar #ContentPlaceHolder1_headPic {
+.personalBar #headPic {
     width: 120px;
     height: 120px;
-    border: 1px solid #777;
-    padding: 5px;
+    border: 1px solid #333;
+    padding: 10px;
     position: relative;
     z-index: 10;
     margin-left: 0px;
     background: #fff;
     box-sizing:border-box;
 }
-.personalBar #ContentPlaceHolder1_name {
+.personalBar #name {
     color: #333;
     font-size: 20px;
     font-family: Arial , '微軟正黑體';
-    top:-15px;
+    top:0px;
     position:relative;
     text-align:right;
-    margin-right:0.7%;
+    margin-right:1%;
 }
 .personalBar .grayBar {
     width: 100%;
@@ -200,16 +187,16 @@ footer p {
 /********************content block setting**********************/
 .block {
     width: 720px;
-    height: 480px;
+    height: auto;
     border: 2px solid #000;
-    margin: 30px auto;
+    margin: 50px auto;
     padding: 40px;
     box-sizing:border-box;
     background:#fff;
 }
 .block .photo {
     width: 640px;
-    height: 360px;
+    height: auto;
 }
 .block .user {
     width: 35px;
@@ -218,17 +205,13 @@ footer p {
     -moz-border-radius: 35px;
     border-radius: 35px;
     border: none;
-    margin: 15px 10px 0px 0px;
-    background: #333;
-    background:url("img/guest_35_35.png");
+    margin: 20px 10px 0px 0px;
 }
 .block .userName {
     color: #707070;
     font-size: 20px;
-    font-weight: normal;
+    font-weight: bold;
     font-family: Arial;
-    position:relative;
-    top:-10px;
 }
 .block .photoName {
     color: #707070;
@@ -236,8 +219,6 @@ footer p {
     font-weight:normal;
     font-family: AArial,'微軟正黑體';
     padding-left:20px;
-    position:relative;
-    top:-10px;
 }
 /*login signup page setting*/
 #loginBlock {
@@ -280,9 +261,11 @@ footer p {
 }
 #uploadBlock {
     font-family:Arial,'微軟正黑體';
-    width:270px;
-    height: auto;
+    width:750px;
+    height:auto;
     margin:7% auto;
+    font-family:Arial;
+    /*padding:10px 15px 30px 15px;*/
     background:#fff;
 }
 #uploadBlock th {
@@ -299,12 +282,6 @@ footer p {
 }
 #uploadBlock td {
     width:100%;
-}
-#uploadBtn {
-    display: inline-block;
-    font-size:0.9em;
-    position:relative;
-    top:-18px;
 }
 
 /*Default page ad block*/
@@ -504,27 +481,114 @@ footer p {
     color:#fff;
 }
 
-/*upload head picture style*/
-#uploadHeadBlock {
-    font-family:Arial,'微軟正黑體';
-    width:280px;
-    height:330px;
-    margin:7% auto;
+/* personal edit page setting*/
+.PanelUploadPicturePage {
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
+    padding-bottom: 45px;
+}
+
+.UploadPictureStyle {
+    width: 700px;
+    height: 100%;
+    margin-top: 10px;
+    margin-left : auto;
+    margin-right : auto;
+    /*margin:13% auto;*/
     font-family:Arial;
     /*padding:10px 15px 30px 15px;*/
     background:#fff;
 }
-#uploadHeadBlock th {
-    width:100%;
-    text-align:center;
+
+.UploadPictureStyle th {
     font-size:1.5em;
     color:#333;
     height:50px;
-    border-bottom:1px solid #eee;
+    border-bottom:2px solid #eee;
 }
-#uploadHeadBlock tr {
-    height: 50px;
-    width:auto;
+
+.UploadPictureStyle input {
+    width:160px;
+    line-height:30px;
+    /*padding:0px 7px;*/
 }
-#uploadHeadBlock td {
+
+.UploadPictureStyle tr td{
+    height:70px;
+}
+.UploadPictureStyle input[type="submit"] {
+    width:25%;
+    float:right;
+    background:#bbb;
+    border:none;
+    line-height: 40px;
+    font-size: 17px;
+    color: #333;
+    margin:0 10px;
+}
+.UploadPictureStyle input[type="submit"]:hover {
+    background:#2cb72a;
+    color:#fff;
+}
+
+/* head picture edit page setting*/
+.uploadHeadBlock {
+    width: 700px;
+    margin: 7% auto;
+    font-family:Arial;
+    background:#fff;
+}
+
+.uploadHeadBlock th {
+    font-size:1.5em;
+    color:#333;
+    height:50px;
+    border-bottom:2px solid #eee;
+}
+
+/*.uploadHeadBlock input {
+    width:160px;
+    line-height:30px;
+}
+
+.uploadHeadBlock input[type="submit"] {
+    width:50%;
+    background:#bbb;
+    border:none;
+    line-height: 30px;
+    font-size: 17px;
+    color: #333;
+}
+.uploadHeadBlock input[type="submit"]:hover {
+    background:#2cb72a;
+    color:#fff;
+}*/
+#BtnUserHeadPicPageReset {
     width:100%;
+    margin: 5px 0px 5px 0px;
+    padding: 0px;
+    background-color: #446CB3;
+    border:none;
+    line-height: 30px;
+    font-size: 15px;
+    color: #fff;
+}
+#BtnUserHeadPicPageReset:hover {
+    background-color:#81CFE0;
+    color:#333;
+}
+#BtnUserHeadPicPageUpload, #BtnUserHeadPicPageCancel {
+    width:100%;
+    margin: 0px;
+    padding: 0px;
+    background:#bbb;
+    border:none;
+    line-height: 30px;
+    font-size: 15px;
+    color: #333;
+}
+#BtnUserHeadPicPageUpload:hover, #BtnUserHeadPicPageCancel:hover {
+    background-color:#2cb72a;
+    color:#fff;
+}

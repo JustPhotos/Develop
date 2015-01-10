@@ -4,8 +4,8 @@
     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <asp:Panel ID="PanelUploadPicturePage" runat="server" DefaultButton="BtnUploadPageCancel">
-        <div id="uploadBlock">
+    <asp:Panel ID="PanelUploadPicturePage" runat="server" DefaultButton="BtnUploadPageCancel" CssClass="PanelUploadPicturePage">
+        <div id="UploadPictureStyle" class="UploadPictureStyle">
             <table align="center">
                 <tr>
                     <th colspan="2">Upload</th>
@@ -33,8 +33,8 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Button ID="BtnUploadPageUpload" runat="server" Text="上傳" />
                         <asp:Button ID="BtnUploadPageCancel" runat="server" Text="取消" />
+                        <asp:Button ID="BtnUploadPageUpload" runat="server" Text="上傳" />
                     </td>
                 </tr>
             </table>

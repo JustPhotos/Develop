@@ -11,7 +11,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <asp:Panel ID="PanelUserInfoPage" runat="server" DefaultButton="BtnUserinfoCancel">
+    <asp:Panel ID="PanelUserInfoPage" runat="server">
         <div id="personalStyle" class="personalStyle">
             <table align="center">
                 <tr>
