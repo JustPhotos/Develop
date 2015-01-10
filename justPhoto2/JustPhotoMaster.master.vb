@@ -45,8 +45,10 @@
     End Sub
 
     Protected Sub headPicture_Click(sender As Object, e As ImageClickEventArgs) Handles headPicture.Click
-        If Session("isLoginState") = "OK" Then
-            Response.Redirect("~\UserHeadPic.aspx")
-        End If
+        Response.Redirect("~\UserHeadPic.aspx")
+    End Sub
+
+    Protected Sub jpt_masterPageUpload_Click(sender As Object, e As EventArgs) Handles jpt_masterPageUpload.Click
+        Response.Redirect("~\UploadPicture.aspx")
     End Sub
 End Class

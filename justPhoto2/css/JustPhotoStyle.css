@@ -186,7 +186,7 @@ footer p {
 /********************content block setting**********************/
 .block {
     width: 720px;
-    height: 480px;
+    height: auto;
     border: 2px solid #000;
     margin: 50px auto;
     padding: 40px;
@@ -195,7 +195,7 @@ footer p {
 }
 .block #photo {
     width: 640px;
-    height: 360px;
+    height: auto;
 }
 .block #user {
     width: 35px;
@@ -261,10 +261,11 @@ footer p {
 }
 #uploadBlock {
     font-family:Arial,'微軟正黑體';
-    width:275px;
-    margin:13% auto;
+    width:750px;
+    height:auto;
+    margin:7% auto;
     font-family:Arial;
-    padding:10px 15px 30px 15px;
+    /*padding:10px 15px 30px 15px;*/
     background:#fff;
 }
 #uploadBlock th {

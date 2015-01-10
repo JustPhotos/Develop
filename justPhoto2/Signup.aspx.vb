@@ -3,7 +3,7 @@ Partial Class Signup
     Inherits System.Web.UI.Page
     Protected Sub accountValidator_ServerValidate(source As Object, args As ServerValidateEventArgs) Handles accountValidator.ServerValidate
         Dim accountText As String = TextBoxAccount.Text
-        Dim rexUrl As New Regex("[^a-z0-9]")
+        Dim rexUrl As New Regex("[^a-z0-9A-Z]")
 
         If accountText.Length < 6 And accountText.Length > 0 Then
             accountValidator.ErrorMessage = "至少輸入六碼"

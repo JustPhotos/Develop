@@ -10,6 +10,7 @@
     </asp:ContentPlaceHolder>
     <link href="css/JustPhotoStyle.css" rel="stylesheet" />
     <script type="text/javascript" src="Scripts/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="Scripts/JustPhotoApplication.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
