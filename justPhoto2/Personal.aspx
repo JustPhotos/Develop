@@ -19,6 +19,7 @@
         </div>
     </div>
     <div class="block" id="photoID_">
+        <asp:ImageButton ID="delectThisPhoto" runat="server" CssClass="btnDelectPhoto" ImageUrl="~/img/trash30.png" ClientIDMode="Static" />
         <asp:Image ID="UserPhoto_" runat="server" CssClass="photo" />
         <br />
         <asp:Image ID="UserHeadPic_" runat="server" CssClass="user" />
